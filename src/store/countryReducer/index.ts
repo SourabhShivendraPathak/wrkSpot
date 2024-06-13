@@ -4,7 +4,7 @@ import * as actionTypes from "./actionTypes";
 
 const initialState: TCountryReducer = {
   countries: [],
-  searchCondition: { filter: {nums:Infinity,text:'Population'}, searchText: "" },
+  searchCondition: { filter: {num:Infinity,text:'Population'}, searchText: "" },
 };
 
 const countryReducer = (

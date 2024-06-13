@@ -18,7 +18,7 @@ type TCountriesAction = {
 
 type TCountryReducer = {
   searchCondition: {
-    filter: {nums:number,text:string} | undefined;
+    filter: {num:number,text:string} | undefined;
     searchText: string |undefined;
   }; 
   countries: TCountries | undefined ;

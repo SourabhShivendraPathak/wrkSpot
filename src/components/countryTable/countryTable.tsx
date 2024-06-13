@@ -3,11 +3,11 @@ import Table from "../../commonComponents/Table/table";
 import { tableColumn } from "../../constants/commomn";
 
 const CountryTable = () => {
-  const filterCountries = (countries:TCountries| undefined,filter:{nums:number,text:string}|undefined,searchText:string) => {
+  const filterCountries = (countries:TCountries| undefined,filter:{num:number,text:string}|undefined,searchText:string) => {
     return countries?.filter((country)=>{
       const isNameMatching= searchText?country.name.toLocaleLowerCase().startsWith(searchText.toLocaleLowerCase()):true;
-      const isPopulationFilter = country.population<filter?.nums;
-      console.log({isNameMatching,searchText,name:country.name,isPopulationFilter,nums:filter?.nums,population:country.population});
+      const isPopulationFilter = country.population<filter?.num;
+      console.log({isNameMatching,searchText,name:country.name,isPopulationFilter,nums:filter?.num,population:country.population});
       return isNameMatching && isPopulationFilter
     })
 
