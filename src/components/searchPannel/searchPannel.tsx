@@ -22,9 +22,8 @@ const SearchPannel = () => {
     dispatch({ type: CHANGE_FILTER, filter:  filter  });
   };
 
-  const handleSearchBox = (search: string) => {
-    console.log(search);
-    dispatch({ type: CHANGE_SEARCH_TEXT, searchText: { search } });
+  const handleSearchBox = (searchText: string) => {
+    dispatch({ type: CHANGE_SEARCH_TEXT, searchText });
   };
   return (
     <section className="sarchSection">
