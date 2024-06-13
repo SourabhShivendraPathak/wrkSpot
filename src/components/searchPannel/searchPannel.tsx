@@ -19,18 +19,24 @@ const SearchPannel = () => {
     countriesApis.fetchCountries();
   };
   const handlePoulationFilter = (filter: {num:number,text:string}) => {
-    dispatch({ type: CHANGE_FILTER, filter:  filter  });
+    dispatch({ type: CHANGE_FILTER, filter  });
   };
 
   const handleSearchBox = (searchText: string) => {
     dispatch({ type: CHANGE_SEARCH_TEXT, searchText });
+  };
+
+  const handleClear = () => {
+    dispatch({ type: CHANGE_FILTER, filter:{num:Infinity,text:'Population'}  });
+    dispatch({ type: CHANGE_SEARCH_TEXT, searchText:"" });
+    
   };
   return (
     <section className="sarchSection">
       <div className="searchBlock">
         <Searchbox onChange={handleSearchBox} />
         <DropDown dropDownItems={dropDownItems} callback={handlePoulationFilter} />
-        <BottonNoBorder text="Clear" />
+        <BottonNoBorder text="Clear" onClick={handleClear}/>
       </div>
       <ButtonPrimary
         text="Show All Countries"

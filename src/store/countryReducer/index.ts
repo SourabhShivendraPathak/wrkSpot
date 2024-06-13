@@ -18,7 +18,6 @@ const countryReducer = (
         countries: action.countriesList,
       };
     case actionTypes.CHANGE_FILTER:
-      console.log({CHANGE_FILTER:action.filter});
       return {
         ...state,
         searchCondition: { ...state.searchCondition, filter: action.filter },

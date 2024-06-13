@@ -12,7 +12,7 @@ type TCountries = ICountry[];
 type TCountriesAction = {
   type: string;
   countriesList?: TCountries  ;
-  filter?:{nums:number,text:string} ;
+  filter?:{num:number,text:string} ;
   searchText?:string
 };
 
