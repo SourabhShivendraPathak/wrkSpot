@@ -4,10 +4,11 @@ interface ITable {
   columns: Tcolumn[];
   data: TCountries | undefined;
 }
+
 const Table: FC<ITable> = ({ columns, data }) => {
-  const deepGet = (keys: string, row: Trow, type: string | undefined) => {
+  const deepGet = (keys:any, row: ICountry, type: string | undefined) => {
     const keyArray = keys.split(".");
-    const extractedValue: string = keyArray.reduce((obj, key) => {
+    const extractedValue = keyArray.reduce((obj:any, key:any) => {
       return obj?.[key];
     }, row);
     if (type === "image") {
@@ -29,7 +30,7 @@ const Table: FC<ITable> = ({ columns, data }) => {
         </tr>
       </thead>
       <tbody>
-        {data.map((row) => {
+        {data?.map((row) => {
           return (
             <tr key={row.id}>
               {columns.map((column) => {

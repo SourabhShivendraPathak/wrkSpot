@@ -24,7 +24,7 @@ const DropDown:FC<IDropDownProps> = ({dropDownItems,callback}) => {
       <div className={`dropdown`}>
         <button onClick={handleDropdownClick} className="dropdown-btn">
           
-          {filterValue?.nums === 0 ? "Population" : filterValue?.text}
+          {filterValue?.num === 0 ? "Population" : filterValue?.text}
           <img src={upDown} style={{height:'10px',width:'10px'}}/>
         </button>
         <div

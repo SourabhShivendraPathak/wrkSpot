@@ -1,5 +1,6 @@
 
 interface ICountry {
+  id: Key | null | undefined;
   name: string;
   code: string;
   capital: string;
