@@ -11,20 +11,20 @@ import {
 } from "../../store/countryReducer/actionTypes";
 
 const SearchPannel = () => {
-  const dropDownItems = ["< 1M", "< 5M", "< 10M"];
+  const dropDownItems = [{num:1000000,text:"< 1M"}, {num:5000000,text:"< 5M"}, {num:10000000,text:"< 10M"}];
 
   const dispatch = useDispatch();
 
   const handleShowAllCountries = () => {
     countriesApis.fetchCountries();
   };
-  const handlePoulationFilter = (filter: number) => {
-    dispatch({ type: CHANGE_FILTER, payload: { populationFilter: filter } });
+  const handlePoulationFilter = (filter: {num:number,text:string}) => {
+    dispatch({ type: CHANGE_FILTER, filter:  filter  });
   };
 
   const handleSearchBox = (search: string) => {
     console.log(search);
-    dispatch({ type: CHANGE_SEARCH_TEXT, payload: { search } });
+    dispatch({ type: CHANGE_SEARCH_TEXT, searchText: { search } });
   };
   return (
     <section className="sarchSection">

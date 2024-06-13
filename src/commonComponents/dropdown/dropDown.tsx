@@ -1,23 +1,22 @@
 import  { useState, FC } from "react";
 import "./styles.css";
 import upDown from '../../assets/upDown.svg';
+import { useSelector } from "react-redux";
 
 
 interface IDropDownProps {
-    dropDownItems:string[];
-    callback: (value:string) => void;
+    dropDownItems:{num:number,text:string}[];
+    callback: (value:{num:number,text:string}) => void;
 }
 
 const DropDown:FC<IDropDownProps> = ({dropDownItems,callback}) => {
   const [dropdownState, setDropdownState] = useState(false);
-  const [dropdownValue, setDropdownValue] = useState("");
-
+  const filterValue = useSelector((state:TStore) => state.countryReducer.searchCondition.filter);
   const handleDropdownClick = () => {
     setDropdownState(!dropdownState);
   };
-  const handleSetDropdownValue = (value:string) => {
-    callback(value)
-    setDropdownValue(value);
+  const handleSetDropdownValue = (value:{num:number,text:string}) => {
+    callback(value);
     setDropdownState(!dropdownState);
   };
 
@@ -25,7 +24,7 @@ const DropDown:FC<IDropDownProps> = ({dropDownItems,callback}) => {
       <div className={`dropdown`}>
         <button onClick={handleDropdownClick} className="dropdown-btn">
           
-          {dropdownValue === "" ? "Population" : dropdownValue}
+          {filterValue?.nums === 0 ? "Population" : filterValue?.text}
           <img src={upDown} style={{height:'10px',width:'10px'}}/>
         </button>
         <div
@@ -36,12 +35,12 @@ const DropDown:FC<IDropDownProps> = ({dropDownItems,callback}) => {
             {
                 dropDownItems.map((item)=>{
                     return (
-                    <div className="dropdown-item" key={item}>
+                    <div className="dropdown-item" key={item.num}>
                         <div
                         className="dropdown__link"
                         onClick={() => handleSetDropdownValue(item)}
                         >
-                        {item}
+                        {item.text}
                         </div>
                     </div>
                     ); 

@@ -1,4 +1,5 @@
 import SearchPannel from "./components/searchPannel/searchPannel";
+import CountryTable from "./components/countryTable/countryTable";
 
 function App() {
   return (
@@ -8,6 +9,7 @@ function App() {
           <h5>Countries info</h5>
         </section>
         <SearchPannel />
+        <CountryTable />
       </div>
     </>
   );

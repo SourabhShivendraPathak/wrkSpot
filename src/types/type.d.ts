@@ -1,3 +1,4 @@
+
 interface ICountry {
   name: string;
   code: string;
@@ -11,17 +12,21 @@ type TCountries = ICountry[];
 type TCountriesAction = {
   type: string;
   countriesList?: TCountries  ;
-  filter?:string;
+  filter?:{nums:number,text:string} ;
   searchText?:string
 };
 
 type TCountryReducer = {
   searchCondition: {
-    filter: string | undefined;
+    filter: {nums:number,text:string} | undefined;
     searchText: string |undefined;
   }; 
   countries: TCountries | undefined ;
 };
+
+type TStore = {
+  countryReducer:TCountryReducer
+}
 
 type TDispatchType = (args: TCountriesAction) => TCountriesAction;
 

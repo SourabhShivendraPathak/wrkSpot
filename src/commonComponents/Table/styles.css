@@ -1,0 +1,9 @@
+#table {
+  border: 3px solid #c0cad3;
+  border-collapse: collapse;
+  margin-top: 100px;
+  width: 100%;
+}
+.tr {
+  border: 3px solid #c0cad3;
+}
