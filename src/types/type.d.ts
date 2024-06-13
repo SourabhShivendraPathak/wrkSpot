@@ -15,6 +15,14 @@ type TCountriesAction = {
   searchText?:string
 };
 
+type TCountryReducer = {
+  searchCondition: {
+    filter: string | undefined;
+    searchText: string |undefined;
+  }; 
+  countries: TCountries | undefined ;
+};
+
 type TDispatchType = (args: TCountriesAction) => TCountriesAction;
 
 type Tcolumn = {

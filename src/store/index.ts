@@ -3,7 +3,7 @@ import { configureStore } from "@reduxjs/toolkit";
 import countryReducer from "./countryReducer";
 
 const store: Store<
-  { countryReducer: { countries: TCountries } },
+  { countryReducer:TCountryReducer },
   TCountriesAction
 > & { dispatch: TDispatchType } = configureStore({
   reducer: {

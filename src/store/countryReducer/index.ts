@@ -1,22 +1,16 @@
 import * as actionTypes from "./actionTypes";
 
-type Tstate = {
-  searchCondition: {
-    filter: string | undefined;
-    searchText: string |undefined;
-  }; 
-  countries: TCountries | undefined ;
-};
 
-const initialState: Tstate = {
+
+const initialState: TCountryReducer = {
   countries: [],
   searchCondition: { filter: "", searchText: "" },
 };
 
 const countryReducer = (
-  state: Tstate = initialState,
+  state: TCountryReducer = initialState,
   action: TCountriesAction
-): Tstate => {
+): TCountryReducer => {
   switch (action.type) {
     case actionTypes.FETCH_COUNTRIES:
       return {
