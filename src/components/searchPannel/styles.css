@@ -1,0 +1,9 @@
+.sarchSection {
+  justify-content: space-between;
+  display: flex;
+}
+
+.searchBlock {
+  display: flex;
+  column-gap: 10px;
+}

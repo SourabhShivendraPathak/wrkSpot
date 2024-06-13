@@ -1,0 +1,19 @@
+.buttonPrimary {
+  background-color: #6558f5;
+  display: flex;
+  align-items: center;
+  padding-inline: 20px;
+  color: whitesmoke;
+  border-radius: 4px;
+  cursor: pointer;
+  border: none;
+}
+
+.buttonNoBorder {
+  background-color: transparent;
+  border: none;
+  color: #6558f5;
+  font-size: larger;
+  text-decoration: underline solid #c7c3fb 2px;
+  cursor: pointer;
+}
