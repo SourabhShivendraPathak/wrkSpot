@@ -2,10 +2,10 @@ import * as actionTypes from "./actionTypes";
 
 type Tstate = {
   searchCondition: {
-    filter: string;
-    searchText: string;
-  };
-  countries: TCountries | string;
+    filter: string | undefined;
+    searchText: string |undefined;
+  }; 
+  countries: TCountries | undefined ;
 };
 
 const initialState: Tstate = {
@@ -21,19 +21,19 @@ const countryReducer = (
     case actionTypes.FETCH_COUNTRIES:
       return {
         ...state,
-        countries: action.payload,
+        countries: action.countriesList,
       };
     case actionTypes.CHANGE_FILTER:
       return {
         ...state,
-        searchCondition: { ...state.searchCondition, filter: action.payload },
+        searchCondition: { ...state.searchCondition, filter: action.filter },
       };
     case actionTypes.CHANGE_SEARCH_TEXT:
       return {
         ...state,
         searchCondition: {
           ...state.searchCondition,
-          searchText: action.payload,
+          searchText: action.searchText,
         },
       };
   }

@@ -10,7 +10,9 @@ type TCountries = ICountry[];
 
 type TCountriesAction = {
   type: string;
-  payload: TCountries | string;
+  countriesList?: TCountries  ;
+  filter?:string;
+  searchText?:string
 };
 
 type TDispatchType = (args: TCountriesAction) => TCountriesAction;

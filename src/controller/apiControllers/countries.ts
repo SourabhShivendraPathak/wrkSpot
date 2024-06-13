@@ -8,7 +8,7 @@ const fetchCountries = async () => {
   const countriesList = response.data;
   store.dispatch({
     type: actionTypes.FETCH_COUNTRIES,
-    payload: countriesList,
+     countriesList,
   });
 };
 
